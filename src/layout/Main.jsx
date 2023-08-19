@@ -12,7 +12,7 @@ function Main() {
   const searchMovies = (searchInput, type = "all") => {
     setLoading(true);
     fetch(
-      `http://www.omdbapi.com/?apikey=32a9b50f&s=${searchInput}${
+      `http://www.omdbapi.com/?apikey=API_KEY&s=${searchInput}${
         type !== "all" ? `&type=${type}` : ""
       }`
     )
@@ -27,7 +27,7 @@ function Main() {
   };
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?apikey=32a9b50f&s=blue`)
+    fetch(`http://www.omdbapi.com/?apikey=API_KEY&s=blue`)
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.Search);
